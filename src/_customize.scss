@@ -1,0 +1,18 @@
+// Override default variables before the import
+$body-bg: #000;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.App {
+  color: white;
+}
+.ant-layout-header {
+  background-color: var(--color-bg-1);
+}
+.ant-layout-footer {
+  background-color: var(--color-bg-1);
+}
+.ant-layout-content {
+  background-color: black;
+}

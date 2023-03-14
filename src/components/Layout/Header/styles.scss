@@ -1,0 +1,45 @@
+.main-layout-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  .header-menu {
+    margin-left: 20px;
+    background-color: transparent;
+    color: white;
+    .ant-menu-item {
+      color: white;
+      &:hover {
+        color: white !important;
+      }
+      &::after {
+        margin-bottom: 10px;
+      }
+      &-active,
+      &-selected {
+        &::after {
+          border-bottom-color: var(--color-yellow) !important;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .right {
+    .ant-btn {
+      border-width: 0px;
+      border-radius: 100px;
+      height: 35px;
+      width: 150px;
+      font-weight: bold;
+    }
+    .btn-grey {
+      background-color: var(--color-grey);
+      color: white;
+      margin-right: 10px;
+    }
+    .btn-yellow {
+      background-color: var(--color-yellow);
+      color: var(--color-bg-1);
+    }
+  }
+}

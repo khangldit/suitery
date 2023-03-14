@@ -3,13 +3,12 @@
 import React from 'react';
 import 'antd/dist/reset.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from './routes';
-import { DefaultLayout } from './Layout';
+import { publicRoutes } from '@routes/routes';
+import { DefaultLayout } from '@components/Layout';
 function Layout() {
   return (
     <Router>
       <div className="App">
-        {/* abc */}
         <Routes>
           {publicRoutes.map(
             (item: { path: string; component: any; layout?: any }, index) => {
@@ -32,8 +31,7 @@ function Layout() {
               );
             }
           )}
-          <Route path="/" element={<div>abc</div>} />
-          {/* <Route path="/aboout" element={<div>abc</div>} /> */}
+          <Route path="*" element={<div>Not found</div>} />
         </Routes>
       </div>
     </Router>
