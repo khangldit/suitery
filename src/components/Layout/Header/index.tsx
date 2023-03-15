@@ -1,7 +1,11 @@
 import './styles.scss';
 import React, { useEffect, useState } from 'react';
-import { Button, MenuProps } from 'antd';
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 import { Menu } from 'antd';
+import Bell from '@assets/svg/bell-notification.svg';
+import UKFlag from '@assets/svg/UK_flag.svg';
+import SuiteryLogo from '@assets/svg/suitery_logo.svg';
 type PropType = {};
 
 const Header = (props: PropType) => {
@@ -9,7 +13,7 @@ const Header = (props: PropType) => {
 
   //   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState('');
-  const items: MenuProps['items'] = [
+  const items: { label: string; key: string }[] = [
     {
       label: 'Play now',
       key: '/play-now',
@@ -23,25 +27,20 @@ const Header = (props: PropType) => {
       key: '/draw',
     },
   ];
-  useEffect(() => {
-    window.open(current, '_self');
-  }, [current]);
+  useEffect(() => {}, [current]);
 
   // #### functions
 
   // #### render
   return (
     <div className="main-layout-header">
-      <div className="left d-flex flex-row">
-        <div
-          onClick={() => {
-            window.open('/', '_self');
-          }}
-          className="cursor-pointer fs-24 fw-bold"
-        >
-          SUITERY
+      <div className="left d-flex flex-row flex-1">
+        <div className="cursor-pointer">
+          <Link to={'/'}>
+            <img src={SuiteryLogo} alt="" />
+          </Link>
         </div>
-        <div>
+        <div className="flex-1">
           <Menu
             className="header-menu"
             onClick={(e) => {
@@ -49,13 +48,33 @@ const Header = (props: PropType) => {
             }}
             selectedKeys={[current]}
             mode="horizontal"
-            items={items}
-          />
+          >
+            {items &&
+              items.map((item) => {
+                return (
+                  <Menu.Item key={item.key}>
+                    <Link
+                      className="fs-16 fw-bold"
+                      style={{ textDecoration: 'none' }}
+                      to={item.key}
+                    >
+                      {item.label}
+                    </Link>
+                  </Menu.Item>
+                );
+              })}
+          </Menu>
         </div>
       </div>
       <div className="right d-flex flex-row align-items-center">
-        <Button className="btn-grey">How To Play</Button>
-        <Button className="btn-yellow">Connect Wallet</Button>
+        <div className="btn">
+          <img src={UKFlag} alt="" />
+        </div>
+        <div className="btn me-2">
+          <img src={Bell} alt="" />
+        </div>
+        <Button className="btn-grey fs-16">How To Play</Button>
+        <Button className="btn-yellow  fs-16">Connect Wallet</Button>
       </div>
     </div>
   );

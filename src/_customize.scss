@@ -11,8 +11,13 @@ $body-bg: #000;
   background-color: var(--color-bg-1);
 }
 .ant-layout-footer {
-  background-color: var(--color-bg-1);
+  background-color: var(--color-gray-23);
 }
 .ant-layout-content {
-  background-color: black;
+  background-color: var(--color-gray-23);
+}
+.page {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
 }

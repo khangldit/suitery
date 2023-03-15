@@ -9,11 +9,11 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      // "@/*": ["src/*"],
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"]
     }
   }
+  // "include": ["src/components", "src/assets", "src/custom.d.ts"]
 }

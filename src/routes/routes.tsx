@@ -1,15 +1,23 @@
 import Home from '@pages/Home';
-import PlayNow from '@pages/PlayNow';
-import Draw from '@pages/Draw';
-import MyItem from '@pages/MyItem';
-import HeaderOnlyLayout from '@components/Layout/HeaderOnlyLayout';
+// import HeaderOnlyLayout from '@components/Layout/HeaderOnlyLayout';
 import * as ROUTES from './constants';
+import Loadable from 'react-loadable';
+
+const loadable = (loader) =>
+  Loadable({
+    loader,
+    delay: false,
+    loading: () => null,
+  });
 
 const publicRoutes = [
   { path: '/', component: Home },
-  { path: ROUTES.PLAY_NOW, component: PlayNow },
-  { path: ROUTES.DRAW, component: Draw },
-  { path: ROUTES.MY_ITEM, component: MyItem },
+  {
+    path: ROUTES.PLAY_NOW,
+    component: loadable(() => import('@pages/PlayNow')),
+  },
+  { path: ROUTES.DRAW, component: loadable(() => import('@pages/Draw')) },
+  { path: ROUTES.MY_ITEM, component: loadable(() => import('@pages/MyItem')) },
 ];
 const privateRoutes = [];
 

@@ -18,7 +18,7 @@
       &-active,
       &-selected {
         &::after {
-          border-bottom-color: var(--color-yellow) !important;
+          border-bottom-color: var(--color-yellow-4) !important;
           margin-bottom: 10px;
         }
       }
@@ -28,8 +28,8 @@
     .ant-btn {
       border-width: 0px;
       border-radius: 100px;
-      height: 35px;
-      width: 150px;
+      height: 40px;
+      width: 180px;
       font-weight: bold;
     }
     .btn-grey {
@@ -38,7 +38,7 @@
       margin-right: 10px;
     }
     .btn-yellow {
-      background-color: var(--color-yellow);
+      background-color: var(--color-yellow-4);
       color: var(--color-bg-1);
     }
   }

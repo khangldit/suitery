@@ -3,8 +3,11 @@
 :root {
   // ---------------------- COLORS ----------------------
   --color-bg-1: #20221d;
-  --color-yellow: #ffd841;
+  --color-yellow-4: #ffd841;
   --color-grey: #404434;
+  --color-gray-5: #ccd1c7;
+  --color-gray-23: #141612;
+  --color-gray-24: #0a0b09;
   // ---------------------- TYPOGRAPHY ----------------------
   // FONT SIZE
   --fs-56: 56px;
@@ -46,25 +49,37 @@ $font-list: 56, 48, 40, 32, 24, 20, 18, 16, 14, 12, 10;
 $fontweight-list: 'extra-bold', 'bold', 'semi-bold', 'medium', 'regular',
   'light';
 $line-height-list: 62, 56, 48, 40, 30, 28, 24, 20, 18, 16, 14;
-
+$width-list: 10, 20, 30, 40, 50, 60, 70, 75, 25, 80, 90, 100;
 @each $size in $font-list {
   .fs-#{$size} {
     font-size: var((--fs-#{$size})) !important;
   }
 }
-
 @each $fw in $fontweight-list {
   .fw-#{$fw} {
     font-weight: var(--fw-#{$fw}) !important;
   }
 }
-
 @each $ln in $line-height-list {
   .lh-#{$ln} {
     line-height: var(--lh-#{$ln}) !important;
   }
 }
+@each $width in $width-list {
+  .w-#{$width} {
+    width: #{$width}+ '%';
+  }
+}
 //
+.color-yellow-4 {
+  color: var(--color-yellow-4);
+}
+.color-gray-5 {
+  color: var(--color-gray-5);
+}
 .cursor-pointer {
   cursor: pointer;
+}
+.flex-1 {
+  flex: 1;
 }
