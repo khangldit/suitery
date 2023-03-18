@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Suitcase from '@assets/svg/suitcase_item.svg';
-import CustomPagination from '@components/ui/CustomPagination';
+import CustomPagination from '@components/CustomPagination';
 
 type PropType = {};
 

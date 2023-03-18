@@ -22,9 +22,26 @@ $body-bg: #000;
   padding-top: 30px;
 }
 //
+.btn-yellow {
+  background-color: var(--color-yellow-4);
+  color: black;
+  border-width: 0px;
+  &:hover {
+    color: black !important;
+  }
+  border-radius: 100px;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+}
 .color-yellow-4 {
   color: var(--color-yellow-4);
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.clickable {
+  &:hover {
+    cursor: pointer;
+  }
 }

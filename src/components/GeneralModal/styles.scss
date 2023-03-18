@@ -1,0 +1,25 @@
+.general-modal-wrapper {
+  .ant-modal {
+    &-content {
+      background-color: black;
+      color: white;
+      .header {
+        display: flex;
+        flex-direction: row;
+        .title {
+          flex: 1;
+        }
+        .close {
+          width: 40px;
+          //   aspect-ratio: 1;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,16 +1,109 @@
 import './styles.scss';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Bg1 from '@assets/svg/bg_coin_1.svg';
 import Bg2 from '@assets/svg/bg_coin_2.svg';
 import BigSuitcase from '@assets/svg/big_suitcase.svg';
-import { Button } from 'antd';
+import { Button, Input, Modal } from 'antd';
 import TopBuyerList from './TopBuyerList';
 import SuitcaseMap from './SuitcaseMap';
 import LastUpdateList from './LastUpdateList';
 import DefaultBackground from '@components/Layout/DefaultBackground';
-import CheckBox from '@components/ui/CheckBox';
+import CheckBox from '@components/CheckBox';
+import GeneralModal from '@components/GeneralModal';
+import CurrencyInput from '@components/CurrencyInput';
+import { useNavigate } from 'react-router-dom';
+import { MY_ITEM } from '@routes/constants';
 const Home = () => {
   const [selectLever, setLever] = useState(1);
+  const modalRef = useRef(null);
+  const modalNothingRef = useRef(null);
+  const modalEarnRef = useRef(null);
+  const navigate = useNavigate();
+  const renderModals = () => {
+    return (
+      <React.Fragment>
+        <GeneralModal
+          ref={(ref) => (modalRef.current = ref)}
+          width={420}
+          title={`Are you sure you want to purchase ${selectLever} boxes?`}
+          footer={
+            <div>
+              <Button
+                className="fs-16 fw-bold lh-24 btn-yellow mb-3"
+                onClick={() => {
+                  navigate(MY_ITEM);
+                }}
+              >
+                Yes, Buy Now & Add To My Items
+              </Button>
+              <Button
+                onClick={() => {
+                  modalRef.current && modalRef.current.close();
+                  let random = Math.floor(Math.random() * 9 + 1);
+                  if (random % 2 === 0) {
+                    modalEarnRef.current && modalEarnRef.current.show();
+                  } else {
+                    modalNothingRef.current && modalNothingRef.current.show();
+                  }
+                }}
+                className="fs-16 fw-bold lh-24 btn-yellow mb-3"
+              >
+                Yes, Buy Now & Open
+              </Button>
+            </div>
+          }
+        >
+          <div>
+            <div className="d-flex flex-row align-items-center justify-content-between mb-2">
+              <div className=" color-gray-14">Your Balance</div>
+              <div className="">9.37 BUSD</div>
+            </div>
+            <div className="d-flex flex-row align-items-center justify-content-between mb-2">
+              <div className=" color-gray-14">The minimum box price is</div>
+              <div className="">9.37 BUSD</div>
+            </div>
+            <CurrencyInput />
+            <div className=" color-gray-14 mt-2">9.37 BUSD</div>
+            <div className=" color-gray-14 mt-3">
+              Once bought, it cannot be withdraw.
+            </div>
+          </div>
+        </GeneralModal>
+        <GeneralModal
+          ref={(ref) => (modalNothingRef.current = ref)}
+          width={420}
+          title={`You Earn...`}
+          footer={
+            <div>
+              <Button className="fs-16 fw-bold lh-24 btn-yellow mb-3">
+                Nothing
+              </Button>
+            </div>
+          }
+        >
+          <div>
+            <img style={{ maxWidth: '100%' }} alt="" src={BigSuitcase} />
+          </div>
+        </GeneralModal>
+        <GeneralModal
+          ref={(ref) => (modalEarnRef.current = ref)}
+          width={420}
+          title={`You Earn...`}
+          footer={
+            <div>
+              <Button className="fs-16 fw-bold lh-24 btn-yellow mb-3">
+                CLAIM $100 NOW
+              </Button>
+            </div>
+          }
+        >
+          <div>
+            <img style={{ maxWidth: '100%' }} alt="" src={BigSuitcase} />
+          </div>
+        </GeneralModal>
+      </React.Fragment>
+    );
+  };
   return (
     <DefaultBackground>
       <div className="page row home-page-wrapper">
@@ -81,7 +174,14 @@ const Home = () => {
                 })}
               </div>
             </div>
-            <Button className="btn-buy-now">BUY NOW</Button>
+            <Button
+              onClick={() => {
+                modalRef.current && modalRef.current.show();
+              }}
+              className="btn-buy-now"
+            >
+              BUY NOW
+            </Button>
           </div>
           <div className="report-card">
             <div>
@@ -101,6 +201,7 @@ const Home = () => {
           <LastUpdateList />
         </div>
       </div>
+      {renderModals()}
     </DefaultBackground>
   );
 };

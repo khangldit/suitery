@@ -1,0 +1,28 @@
+.currency-input {
+  :where(.css-dev-only-do-not-override-ph9edi).ant-input-affix-wrapper:not(
+      .ant-input-affix-wrapper-disabled
+    ):hover {
+    border-color: green !important;
+  }
+  &:hover {
+    border-color: red;
+  }
+  background-color: var(--color-gray-20);
+  color: white;
+  border-color: var(--color-yellow-4);
+  border-radius: 1px;
+  .ant-input {
+    background-color: var(--color-gray-20);
+    color: white;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

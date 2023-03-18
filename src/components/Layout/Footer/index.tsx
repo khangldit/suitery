@@ -116,7 +116,7 @@ const index = (props: PropType) => {
           flex: 1,
         }}
       >
-        © Suitery. Inc. All rightts reserved.
+        © Suitery. Inc. All rights reserved.
       </div>
     </div>
   );
