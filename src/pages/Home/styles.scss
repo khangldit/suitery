@@ -38,4 +38,82 @@
       color: var(--color-gray-5);
     }
   }
+  .top-suitcase-buyers {
+    background-color: var(--color-gray-23);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .header-row {
+      border: 1px solid var(--color-gray-13);
+      border-width: 0px 0px 1px 0px;
+      .header-cell {
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .content {
+      flex: 1;
+    }
+    .item-row {
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      height: 20%;
+      .cell {
+        text-align: center;
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+  .suitcase-map {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .suitcase-item-wrapper {
+      width: calc(100% / 7);
+      margin-bottom: 15px;
+      background-color: transparent;
+      border-color: transparent;
+      &:hover {
+        background-color: #ffffff11;
+      }
+      .suitcase-item {
+        text-align: center;
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+  .last-update-list {
+    margin-top: 30px;
+    background-color: var(--color-gray-23);
+    padding: 30px 50px;
+    margin-left: -50px;
+    margin-right: -60px;
+    .description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    a {
+      text-decoration: solid !important;
+      .title {
+        color: var(--color-white);
+
+        &:hover {
+          color: var(--color-yellow-4);
+        }
+      }
+    }
+  }
+  .select-lever-group {
+    display: flex;
+    border: 1px dashed var(--color-yellow-4);
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
 }

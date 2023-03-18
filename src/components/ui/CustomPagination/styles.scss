@@ -1,0 +1,35 @@
+.custom-pagination {
+  text-align: center;
+  margin-top: 10px;
+  .ant-pagination {
+    color: white;
+  }
+  color: white;
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    background-color: #000;
+    border-radius: 100px;
+    color: #fff;
+    border: 1px solid var(--color-gray-20);
+  }
+  .ant-pagination-disabled {
+    border: 1px solid var(--color-gray-20);
+    color: var(--color-gray-20);
+  }
+
+  .ant-pagination-item,
+  .ant-pagination-jump-prev.ant-pagination-jump-prev-custom-icon,
+  .ant-pagination-jump-next.ant-pagination-jump-next-custom-icon {
+    background-color: #000;
+    border-radius: 100px;
+    color: #fff;
+    border: 1px solid var(--color-gray-20);
+    &-active {
+      color: var(--color-yellow-4);
+      border: 1px solid var(--color-yellow-4);
+      &:hover {
+        border: 1px solid var(--color-yellow-4);
+      }
+    }
+  }
+}

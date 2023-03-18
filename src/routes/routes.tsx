@@ -1,5 +1,4 @@
 import Home from '@pages/Home';
-// import HeaderOnlyLayout from '@components/Layout/HeaderOnlyLayout';
 import * as ROUTES from './constants';
 import Loadable from 'react-loadable';
 
