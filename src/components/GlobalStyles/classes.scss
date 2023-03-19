@@ -43,5 +43,6 @@ $body-bg: #000;
 .clickable {
   &:hover {
     cursor: pointer;
+    opacity: 0.9;
   }
 }

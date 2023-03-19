@@ -77,7 +77,12 @@ const Home = () => {
           title={`You Earn...`}
           footer={
             <div>
-              <Button className="fs-16 fw-bold lh-24 btn-yellow mb-3">
+              <Button
+                onClick={() =>
+                  modalNothingRef.current && modalNothingRef.current.close()
+                }
+                className="fs-16 fw-bold lh-24 btn-yellow mb-3"
+              >
                 Nothing
               </Button>
             </div>
@@ -93,7 +98,12 @@ const Home = () => {
           title={`You Earn...`}
           footer={
             <div>
-              <Button className="fs-16 fw-bold lh-24 btn-yellow mb-3">
+              <Button
+                onClick={() =>
+                  modalEarnRef.current && modalEarnRef.current.close()
+                }
+                className="fs-16 fw-bold lh-24 btn-yellow mb-3"
+              >
                 CLAIM $100 NOW
               </Button>
             </div>
