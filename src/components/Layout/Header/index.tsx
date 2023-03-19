@@ -27,7 +27,11 @@ const Header = (props: PropType) => {
       key: '/draw',
     },
   ];
-  useEffect(() => {}, [current]);
+  useEffect(() => {
+    if (window.location && window.location.pathname) {
+      setCurrent(window.location.pathname);
+    }
+  }, []);
 
   // #### functions
 
@@ -36,7 +40,12 @@ const Header = (props: PropType) => {
     <div className="main-layout-header">
       <div className="left d-flex flex-row flex-1">
         <div className="cursor-pointer">
-          <Link to={'/'}>
+          <Link
+            to={'/'}
+            onClick={() => {
+              setCurrent('');
+            }}
+          >
             <img src={SuiteryLogo} alt="" />
           </Link>
         </div>

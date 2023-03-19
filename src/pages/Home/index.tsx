@@ -13,6 +13,8 @@ import GeneralModal from '@components/GeneralModal';
 import CurrencyInput from '@components/CurrencyInput';
 import { useNavigate } from 'react-router-dom';
 import { MY_ITEM } from '@routes/constants';
+import TimeDisplay from '@components/TimeDisplay';
+import moment from 'moment';
 const Home = () => {
   const [selectLever, setLever] = useState(1);
   const modalRef = useRef(null);
@@ -128,21 +130,8 @@ const Home = () => {
             }}
           >
             <div className="fs-32  fw-bold">Countdown to Drawing</div>
-            <div className=" d-flex flex-row w-70 justify-content-between">
-              <div className="d-flex flex-column align-items-center">
-                <div className="fs-32 fw-bold color-yellow-4">46</div>
-                <div className="fs-16 color-gray-5 mt-3">Hours</div>
-              </div>
-              <div className="fs-32 fw-bold color-yellow-4">:</div>
-              <div className="d-flex flex-column align-items-center">
-                <div className="fs-32 fw-bold color-yellow-4">12</div>
-                <div className="fs-16 color-gray-5 mt-3">Min</div>
-              </div>
-              <div className="fs-32 fw-bold color-yellow-4">:</div>
-              <div className="d-flex flex-column align-items-center">
-                <div className="fs-32 fw-bold color-yellow-4">00</div>
-                <div className="fs-16 color-gray-5 mt-3">Second</div>
-              </div>
+            <div className="w-70">
+              <TimeDisplay time={moment()} />
             </div>
           </div>
         </div>
