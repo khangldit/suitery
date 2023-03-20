@@ -80,7 +80,7 @@ const MyItem = (props: PropType) => {
                 <MileStone
                   total={200}
                   milestones={[10, 50, 100]}
-                  current={50}
+                  current={67}
                   suffix="K"
                   prefix="$"
                 />
