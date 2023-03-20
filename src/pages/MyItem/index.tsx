@@ -6,6 +6,7 @@ import Next from '@assets/svg/next_icon.svg';
 import InvestChart from './Charts/InvestChart';
 import BalanceChart from './Charts/BalanceChart';
 import RadioGroup from '@components/RadioGroup';
+import MileStone from './Charts/MileStone';
 type PropType = {};
 
 const MyItem = (props: PropType) => {
@@ -71,8 +72,16 @@ const MyItem = (props: PropType) => {
               className="my-item-card align-items-center"
               style={{ height: 200 }}
             >
-              <div className="fw-32 fw-bold">Milestone</div>
-              <div className="milestone-chart mt-2"></div>
+              <div className="fs-32 fw-bold">Milestone</div>
+              <div className="milestone-chart mt-2 mb-5">
+                <MileStone
+                  total={200}
+                  milestones={[10, 50, 100]}
+                  current={50}
+                  suffix="K"
+                  prefix="$"
+                />
+              </div>
               <div className="fw-16 fw-bold color-gray-13">
                 When a milestone is reached, an amount of USDT will be donated
                 to the golden box.

@@ -35,18 +35,27 @@ const InvestChart = () => {
         display: false,
         text: '',
       },
+      tooltip: {
+        displayColors: false,
+        backgroundColor: '#ffd741',
+        callbacks: {
+          title: (xDatapoint) => {
+            return '';
+          },
+          label: (yDatapoint) => {
+            return yDatapoint.raw;
+          },
+          labelTextColor: (yDatapoint) => {
+            return 'rgb(0,0,0)';
+          },
+        },
+      },
     },
-    // tooltips: {
-    //   mode:'average',
-    //   backgroundColor: 'red',
-    // },
-    // scales: {
-    //   xAxes: [
-    //     {
-    //       barThickness: 73,
-    //     },
-    //   ],
-    // },
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
   };
   const labels = [
     'January',

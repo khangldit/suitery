@@ -1,6 +1,6 @@
 import './styles.scss';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 import { Menu } from 'antd';
 import Bell from '@assets/svg/bell-notification.svg';
@@ -10,6 +10,7 @@ type PropType = {};
 
 const Header = (props: PropType) => {
   //   const {} = props;
+  const navigate = useNavigate();
 
   //   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState('');
@@ -62,13 +63,14 @@ const Header = (props: PropType) => {
               items.map((item) => {
                 return (
                   <Menu.Item key={item.key}>
-                    <Link
-                      className="fs-16 fw-bold"
-                      style={{ textDecoration: 'none' }}
-                      to={item.key}
+                    <div
+                      className="fs-16 fw-bold clickable"
+                      onClick={() => {
+                        navigate(item.key);
+                      }}
                     >
                       {item.label}
-                    </Link>
+                    </div>
                   </Menu.Item>
                 );
               })}
