@@ -1,4 +1,4 @@
-import './styles.scss';
+import '../styles.scss';
 import React, { useEffect, useState } from 'react';
 import { Moment } from 'moment';
 import TimeDisplay from '@components/TimeDisplay';

@@ -12,7 +12,10 @@
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
       "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@reducers/*": ["src/reducers/*"],
+      "@selectors/*": ["src/selectors/*"],
+      "@actions/*": ["src/actions/*"]
     }
   }
   // "include": ["src/components", "src/assets", "src/custom.d.ts"]

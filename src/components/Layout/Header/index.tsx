@@ -62,15 +62,13 @@ const Header = (props: PropType) => {
             {items &&
               items.map((item) => {
                 return (
-                  <Menu.Item key={item.key}>
-                    <div
-                      className="fs-16 fw-bold clickable"
-                      onClick={() => {
-                        navigate(item.key);
-                      }}
-                    >
-                      {item.label}
-                    </div>
+                  <Menu.Item
+                    key={item.key}
+                    onClick={() => {
+                      navigate(item.key);
+                    }}
+                  >
+                    <div className="fs-16 fw-bold clickable">{item.label}</div>
                   </Menu.Item>
                 );
               })}

@@ -1,19 +1,19 @@
 import './styles.scss';
 import DefaultBackground from '@components/Layout/DefaultBackground';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import BNB from '@assets/svg/currency/bnb_icon.svg';
 import Next from '@assets/svg/next_icon.svg';
 import InvestChart from './Charts/InvestChart';
 import BalanceChart from './Charts/BalanceChart';
 import RadioGroup from '@components/RadioGroup';
 import MileStone from './Charts/MileStone';
+import { increase } from '@reducers/counterReducer';
 type PropType = {};
 
 const MyItem = (props: PropType) => {
   //   const {} = props;
 
   //   const [visible, setVisible] = useState(false);
-
   //   useEffect(() => {}, []);
 
   // #### functions
@@ -56,12 +56,15 @@ const MyItem = (props: PropType) => {
           <div className="col-3">
             <div className="my-item-card align-items-center">
               <div className="fs-16">Your Balance</div>
-              <div className="fs-48 fw-bold">230.9</div>
+              <div className="fs-48 fw-bold">309.7</div>
               <span>
                 <img src={BNB} alt="bnb" className="me-1" />
                 BNB
               </span>
-              <div className="fs-16 top-up-balance clickable mt-2">
+              <div
+                className="fs-16 top-up-balance clickable mt-2"
+                onClick={() => {}}
+              >
                 Top up Balance <img alt="next" src={Next} className="ms-1" />
               </div>
               <BalanceChart />

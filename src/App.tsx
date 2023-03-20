@@ -5,6 +5,7 @@ import 'antd/dist/reset.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '@routes/routes';
 import { DefaultLayout } from '@components/Layout';
+
 function Layout() {
   return (
     <Router>

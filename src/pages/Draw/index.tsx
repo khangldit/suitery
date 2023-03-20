@@ -1,9 +1,9 @@
 import './styles.scss';
 import DefaultBackground from '@components/Layout/DefaultBackground';
 import React, { useEffect, useState } from 'react';
-import DrawingCard from './DrawingCard';
+import DrawingCard from './components/DrawingCard';
 import moment, { Moment } from 'moment';
-import HistoryTables from './HistoryTables';
+import HistoryTables from './components/HistoryTables';
 type DrawInfo = {
   name: string;
   numbers: number[];
