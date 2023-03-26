@@ -50,6 +50,7 @@
     .history-tables {
       margin-top: 20px;
       .list {
+        padding: 10px 0px;
         .row-line {
           // background-color: red;
           display: flex;
@@ -71,6 +72,19 @@
         .cell {
           // flex: 1;
           font-size: 16px;
+        }
+        &-content {
+          max-height: 200px;
+          overflow-y: scroll;
+          overflow: scroll;
+        }
+      }
+      .cols {
+        &-boxnumber {
+          width: 100px;
+        }
+        &-month {
+          width: 70px;
         }
       }
     }

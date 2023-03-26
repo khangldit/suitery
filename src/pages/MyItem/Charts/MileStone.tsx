@@ -33,7 +33,7 @@ const MileStone = (props: PropType) => {
             <div
               className="milestone-mark"
               style={{
-                backgroundColor: current >= milestone ? '#95D701' : '',
+                backgroundColor: 'transparent',
               }}
             ></div>
             <div className="milestone-value">

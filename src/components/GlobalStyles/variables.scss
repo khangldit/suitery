@@ -67,6 +67,7 @@
   // ---------------------- TYPOGRAPHY ----------------------
   // FONT SIZE
   --fs-74: 74px;
+  --fs-64: 64px;
   --fs-56: 56px;
   --fs-48: 48px;
   --fs-40: 40px;
@@ -89,6 +90,7 @@
   --fw-light: 300;
 
   // LINE HEIGHT
+  --lh-80: 76px;
   --lh-76: 76px;
   --lh-62: 62px;
   --lh-56: 56px;
@@ -103,7 +105,7 @@
   --lh-14: 14px;
 }
 
-$font-list: 56, 48, 40, 32, 24, 20, 18, 16, 14, 12, 10, 74;
+$font-list: 56, 48, 40, 32, 24, 20, 18, 16, 14, 12, 10, 74, 64;
 @each $size in $font-list {
   .fs-#{$size} {
     font-size: var((--fs-#{$size})) !important;
@@ -116,7 +118,7 @@ $fontweight-list: 'extra-bold', 'bold', 'semi-bold', 'medium', 'regular',
     font-weight: var(--fw-#{$fw}) !important;
   }
 }
-$line-height-list: 62, 56, 48, 40, 30, 28, 24, 20, 18, 16, 14, 76;
+$line-height-list: 62, 56, 48, 40, 30, 28, 24, 20, 18, 16, 14, 76, 80;
 @each $ln in $line-height-list {
   .lh-#{$ln} {
     line-height: var(--lh-#{$ln}) !important;

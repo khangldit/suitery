@@ -1,19 +1,20 @@
 import './styles.scss';
 import DefaultBackground from '@components/Layout/DefaultBackground';
-import React from 'react';
-import BNB from '@assets/svg/currency/bnb_icon.svg';
-import Next from '@assets/svg/next_icon.svg';
+import React, { useState } from 'react';
+// import BNB from '@assets/svg/currency/bnb_icon.svg';
+// import Next from '@assets/svg/next_icon.svg';
 import InvestChart from './Charts/InvestChart';
-import BalanceChart from './Charts/BalanceChart';
+// import BalanceChart from './Charts/BalanceChart';
 import RadioGroup from '@components/RadioGroup';
 import MileStone from './Charts/MileStone';
-import { increase } from '@reducers/counterReducer';
+import SuitcaseTabs from './Charts/SuitcaseTabs';
+// import { increase } from '@reducers/counterReducer';
+// import { Tabs } from 'antd';
 type PropType = {};
 
 const MyItem = (props: PropType) => {
   //   const {} = props;
 
-  //   const [visible, setVisible] = useState(false);
   //   useEffect(() => {}, []);
 
   // #### functions
@@ -23,7 +24,8 @@ const MyItem = (props: PropType) => {
     <DefaultBackground>
       <div className="my-item-page page">
         <div className="row">
-          <div className="col-9">
+          <div className="col-12">
+            <SuitcaseTabs />
             <div className="my-item-card">
               <div className="d-flex flex-row justify-content-between align-items-center">
                 <div className="fs-32 fw-bold">Your Investment</div>
@@ -53,7 +55,7 @@ const MyItem = (props: PropType) => {
               <InvestChart />
             </div>
           </div>
-          <div className="col-3">
+          {/* <div className="col-3">
             <div className="my-item-card align-items-center">
               <div className="fs-16">Your Balance</div>
               <div className="fs-48 fw-bold">309.7</div>
@@ -69,13 +71,13 @@ const MyItem = (props: PropType) => {
               </div>
               <BalanceChart />
             </div>
-          </div>
+          </div> */}
           <div className="col-12">
             <div
               className="my-item-card align-items-center"
               style={{ height: 200 }}
             >
-              <div className="fs-32 fw-bold">Milestone</div>
+              {/* <div className="fs-32 fw-bold">Milestone</div> */}
               <div className="milestone-chart mt-2 mb-5">
                 <MileStone
                   total={200}

@@ -83,7 +83,7 @@ const Header = (props: PropType) => {
           <img src={Bell} alt="" />
         </div>
         <Button className="btn-grey fs-16">How To Play</Button>
-        <Button className="btn-yellow  fs-16">Connect Wallet</Button>
+        <Button className="btn-yellow fs-16">Connect Wallet</Button>
       </div>
     </div>
   );

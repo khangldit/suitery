@@ -4,10 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { MetaType } from 'src/types';
 type PropType = {
   meta?: MetaType;
+  showTotal?: boolean;
 };
 
 const CustomPagination = (props: PropType) => {
-  const { meta } = props;
+  const { meta, showTotal = true } = props;
 
   //   useEffect(() => {}, []);
 
@@ -23,7 +24,7 @@ const CustomPagination = (props: PropType) => {
         defaultCurrent={meta.current_page || 1}
         showTotal={(total: number, range: any) => {
           console.log('________ShowTotal:', total, range);
-          return <div>Total {total} items</div>;
+          return showTotal ? <div>Total {total} items</div> : '';
         }}
         total={meta.total || 0}
         pageSize={meta.page_size || 10}

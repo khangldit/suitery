@@ -38,6 +38,7 @@ const InvestChart = () => {
       tooltip: {
         displayColors: false,
         backgroundColor: '#ffd741',
+        // yAlign: 'bottom',
         callbacks: {
           title: (xDatapoint) => {
             return '';
